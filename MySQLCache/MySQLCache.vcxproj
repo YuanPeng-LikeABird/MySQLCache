@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{3CD537FA-1E3E-4354-9347-97FCE37E6FB5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MySQLCache</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Externals\libevent\include\event2;$(ProjectDir)Externals\libevent\include;$(ProjectDir)Externals\antlr4\runtime\Cpp\runtime\src;%(AdditionalIncludeDirectories);$(ProjectDir)SQLParser;$(ProjectDir)SQLStorage;$(ProjectDir)SQLConnector;$(ProjectDir)Server;$(ProjectDir)Common;$(ProjectDir)Utils;$(ProjectDir)SQLTable;$(ProjectDir)Memory;$(ProjectDir)Test;$(ProjectDir)Compress;$(ProjectDir)Externals\mysql-connector\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)Externals\libevent\;$(ProjectDir)Externals\antlr4\;%(AdditionalLibraryDirectories);$(ProjectDir)Externals\mysql-connector</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;antlr4-runtime.lib;%(AdditionalDependencies);mysqlcppconn.lib;libevent_core.lib;libevent_extras.lib;libevent.lib;ws2_32.lib;winmm.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Externals\libevent\include\event2;$(ProjectDir)Externals\libevent\include;$(ProjectDir)Externals\antlr4\runtime\Cpp\runtime\src;%(AdditionalIncludeDirectories);$(ProjectDir)SQLParser;$(ProjectDir)SQLStorage;$(ProjectDir)SQLConnector;$(ProjectDir)Server;$(ProjectDir)Common;$(ProjectDir)Utils;$(ProjectDir)SQLTable;$(ProjectDir)Memory;$(ProjectDir)Test;$(ProjectDir)Compress;$(ProjectDir)Externals\mysql-connector\include</AdditionalIncludeDirectories>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)Externals\libevent\;$(ProjectDir)Externals\antlr4\;%(AdditionalLibraryDirectories);$(ProjectDir)Externals\mysql-connector\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>antlr4-runtime.lib;mysqlcppconn.lib;libevent_core.lib;libevent_extras.lib;libevent.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Common\CacheSetting.cpp" />
+    <ClCompile Include="Common\Common.cpp" />
+    <ClCompile Include="Common\Consts.cpp" />
+    <ClCompile Include="Common\MyVariant.cpp" />
+    <ClCompile Include="Common\Task.cpp" />
+    <ClCompile Include="Common\TaskQueue.cpp" />
+    <ClCompile Include="Compress\snappy-c.cc" />
+    <ClCompile Include="Compress\snappy-sinksource.cc" />
+    <ClCompile Include="Compress\snappy-stubs-internal.cc" />
+    <ClCompile Include="Compress\snappy.cc" />
+    <ClCompile Include="Memory\ArrayMemoryManager.cpp" />
+    <ClCompile Include="Memory\WriteBuffer.cpp" />
+    <ClCompile Include="Memory\MemoryManager.cpp" />
+    <ClCompile Include="Memory\SwapFile.cpp" />
+    <ClCompile Include="Memory\VarMemoryManager.cpp" />
+    <ClCompile Include="MySQLCache.cpp" />
+    <ClCompile Include="Server\CacheServer.cpp" />
+    <ClCompile Include="SQLConnector\MySQLConnector.cpp" />
+    <ClCompile Include="SQLConnector\SQLConnectorFactory.cpp" />
+    <ClCompile Include="SQLParser\MySQLExprListener.cpp" />
+    <ClCompile Include="SQLParser\MySqlLexer.cpp" />
+    <ClCompile Include="SQLParser\MySqlParser.cpp" />
+    <ClCompile Include="SQLParser\MySqlParserBaseListener.cpp" />
+    <ClCompile Include="SQLParser\MySqlParserListener.cpp" />
+    <ClCompile Include="SQLStorage\ByteArray.cpp" />
+    <ClCompile Include="SQLStorage\InputStream.cpp" />
+    <ClCompile Include="SQLStorage\OutputStream.cpp" />
+    <ClCompile Include="SQLStorage\SQLStorage.cpp" />
+    <ClCompile Include="SQLTable\SQLContext.cpp" />
+    <ClCompile Include="SQLTable\SQLGraph.cpp" />
+    <ClCompile Include="SQLTable\SQLTable.cpp" />
+    <ClCompile Include="SQLTable\SQLTableContainer.cpp" />
+    <ClCompile Include="SQLTable\SQLTableIndex.cpp" />
+    <ClCompile Include="SQLTable\SQLTableSchema.cpp" />
+    <ClCompile Include="test\MemoryTest.cpp" />
+    <ClCompile Include="Utils\CacheMonitor.cpp" />
+    <ClCompile Include="Utils\MathUtils.cpp" />
+    <ClCompile Include="Utils\StrUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\CacheSetting.h" />
+    <ClInclude Include="Common\Common.h" />
+    <ClInclude Include="Common\Consts.h" />
+    <ClInclude Include="Common\MyException.h" />
+    <ClInclude Include="Common\MyVariant.h" />
+    <ClInclude Include="Common\Task.h" />
+    <ClInclude Include="Common\TaskQueue.h" />
+    <ClInclude Include="Compress\config.h" />
+    <ClInclude Include="Compress\snappy-c.h" />
+    <ClInclude Include="Compress\snappy-internal.h" />
+    <ClInclude Include="Compress\snappy-sinksource.h" />
+    <ClInclude Include="Compress\snappy-stubs-internal.h" />
+    <ClInclude Include="Compress\snappy-stubs-public.h" />
+    <ClInclude Include="Compress\snappy.h" />
+    <ClInclude Include="Memory\ArrayMemoryManager.h" />
+    <ClInclude Include="Memory\WriteBuffer.h" />
+    <ClInclude Include="Memory\MemoryManager.h" />
+    <ClInclude Include="Memory\SwapFile.h" />
+    <ClInclude Include="Memory\VarMemoryManager.h" />
+    <ClInclude Include="Server\CacheServer.h" />
+    <ClInclude Include="SQLConnector\SQLConnector.h" />
+    <ClInclude Include="SQLConnector\MySQLConnector.h" />
+    <ClInclude Include="SQLConnector\SQLConnectorFactory.h" />
+    <ClInclude Include="SQLConnector\SQLConnectorException.h" />
+    <ClInclude Include="SQLParser\MySQLExprListener.h" />
+    <ClInclude Include="SQLParser\MySqlLexer.h" />
+    <ClInclude Include="SQLParser\MySqlParser.h" />
+    <ClInclude Include="SQLParser\MySqlParserBaseListener.h" />
+    <ClInclude Include="SQLParser\MySqlParserListener.h" />
+    <ClInclude Include="SQLParser\SQLParseException.h" />
+    <ClInclude Include="SQLStorage\ByteArray.h" />
+    <ClInclude Include="SQLStorage\InputStream.h" />
+    <ClInclude Include="SQLStorage\OutputStream.h" />
+    <ClInclude Include="SQLStorage\SQLStorage.h" />
+    <ClInclude Include="SQLTable\DataType.h" />
+    <ClInclude Include="SQLTable\SQLContext.h" />
+    <ClInclude Include="SQLTable\SQLGraph.h" />
+    <ClInclude Include="SQLTable\SQLTable.h" />
+    <ClInclude Include="SQLTable\SQLTableContainer.h" />
+    <ClInclude Include="SQLTable\SQLTableIndex.h" />
+    <ClInclude Include="SQLTable\SQLTableSchema.h" />
+    <ClInclude Include="Test\MemoryTest.h" />
+    <ClInclude Include="Utils\CacheMonitor.h" />
+    <ClInclude Include="Utils\MathUtils.h" />
+    <ClInclude Include="Utils\StrUtils.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
