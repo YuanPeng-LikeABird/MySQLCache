@@ -269,18 +269,31 @@ Write Server should start up after Main Server, console output :connect server m
 
 Server has a start up setting file named Cache.ini. All contents is like that below:
 ###
+
 server-mode:read     #as same as start up parameter readMode
+
 server-thread-count:8   # count of server threads
+
 worker-thread-count:8  #count of worker threads
+
 array-memory-limit:1073741824  #threshold to compress of arrayMemory Pool
+
 array-memory-push-limit:1000000000 #threshold to write disk of arrayMemory Pool
+
 var-memory-limit:1073741824  #threshold to compress of varMemory Pool
+
 var-memory-push-limit:1000000000 #threshold to write disk of varMemory Pool
+
 table-memory-limit:1073741824  #threshold to compress of TableContainer
+
 write-buffer-default-memory:1048576  #init memory of buffer for write tmp data
+
 memory-root-path:/var/tmp/ #write disk location of memory pool
+
 server-addr:127.0.0.1  # addr of MainServer, use for Write Server to connect to
+
 sql-server-addr:tcp://127.0.0.1:3306,root,123456,mydb  # mysql connect info, root is username, 123456 is password, mydb is database name
+
 ###
 
 5.End
