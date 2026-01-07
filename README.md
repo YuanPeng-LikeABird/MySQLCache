@@ -86,7 +86,8 @@ SQLTable is created and data is readed from DB in the first visit.Return it to a
 
 This chapter discuss how INSERT,UPDATE,DELTE statement affect these SQLTables.
 
-SELECT usually has WHERE clause, it is a condition: in DB, it is used to filter the proper records; in my case, it is used to filter the proper SQLTables.Create index on the WHERE condition to highly promote filter progress.ex. SELECT score FROM student WHERE name = ? , in this sql, we can create index on the field:name.ex. find name==’LiLei’ in index, we find SQLTable for sql(SELECT score FROM student WHERE name = ‘LiLei’).When insert a new Record in Table Student, look at new student’s name, if name equals ‘LiLei’, then the SQLTable matched, otherwise not. The index not only support =, but also < ,>,between…The index focues at one field.For sql: SELECT score FROM student WHERE name = ? AND sex = ?，index field is name, not name,sex.
+SELECT usually has WHERE clause, it is a condition: in DB, it is used to filter the proper records; in my case, it is used to filter the proper SQLTables.Create index on the WHERE condition to highly promote filter progress.ex. SELECT score FROM student WHERE name = ? , in this sql, we can create index on the field:name.ex. find name==’LiLei’ in index, we find SQLTable for sql(SELECT score FROM student WHERE name = ‘LiLei’).The index not only support =, but also < ,>,between…The index focues at one field, not union index.For sql: SELECT score FROM student WHERE name = ? AND sex = ?，index field is name, not name,sex.
+How to use index?There are records INSERT/DELETE/UPDATE, how to find matching SQLTables? First, we need fetch all field values of Records, then search index field value of Records in index, finally, search results is SQLTables after matching.
  We use index to do most of filter, then the filtered records are to be matched by whole WHERE condition one by one.
  
 Data Change is at least Field Level. UPDATE is obviously at this level. INSERT and DELETE is ‌equivalent to UPDATE every Field in Record.Picture 3 show the procedure to find affected SQLTables.
@@ -149,7 +150,7 @@ Similar to DELETE, UPDATE statement splits into two statement:
 
 （1）	SELECT with UPDATE Where clause
 
-Ex. UPDATE student SET score=100 WHERE name=’LiLei’, SELECT statement is: SELECT * WHERE name = ‘LiLei’.Through select, we get every field values of DELETE records, including PK.
+Ex. UPDATE student SET score=100 WHERE name=’LiLei’, SELECT statement is: SELECT * WHERE name = ‘LiLei’.Through select, we get every field values of UPDATE records, including PKs.
 
 （2）	UPDATE by PKs
 
